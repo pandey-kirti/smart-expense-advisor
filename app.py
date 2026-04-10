@@ -4,11 +4,11 @@ import sqlite3, os, joblib, numpy as np, pandas as pd
 from datetime import datetime
 
 DB_PATH = 'expense.db'
-MODEL_PATH = 'models/rf_model.pkl'
+MODEL_PATH = 'models/rf_model.pkl'   
 
 app = Flask(__name__, static_folder='static', template_folder='templates')
 
-def get_db():
+def get_db():  
     db = getattr(g, '_database', None)
     if db is None:
         db = g._database = sqlite3.connect(DB_PATH)
